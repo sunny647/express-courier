@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "1a879d6f-b379-499f-ab79-ed4059ae9860",
+		"name": "Express Courier APIs",
+		"description": "REST APIS for 562 final project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Sharath",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "Manchikatla",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Admin@123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "admin@testa.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Shipment",
+			"item": [
+				{
+					"name": "CreateShipment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNmNzE5YjhhMWUyZDE5Y2M5MWQxZWEiLCJmaXJzdE5hbWUiOiJTdW5ueSIsImxhc3ROYW1lIjoiTSIsImVtYWlsIjoic3VubnlAZ21haWwuY29tIiwiaWF0IjoxNjA3NDUxOTgyLCJleHAiOjE2MDc0NTkxODJ9.W6LLpwcrEb_1QEA0hKmwaAZSE8bA_bU0Y7EXHTOojBU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "delhi",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "hyd",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "express",
+									"type": "text"
+								},
+								{
+									"key": "shipstatus",
+									"value": "new",
+									"type": "text"
+								},
+								{
+									"key": "userEmail",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shipment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ShipmentList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNmY2RkZGIyZDY1ZDA0N2NmMGZiYzgiLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTYwNzQ3MzAxMywiZXhwIjoxNjA3NDgwMjEzfQ.eYi5HQt5UnxBVlP3u-r2-KVC8zuFsckxGXRIKlYnbnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/shipment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shipment Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNmY2RkZGIyZDY1ZDA0N2NmMGZiYzgiLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTYwNzQ3MzAxMywiZXhwIjoxNjA3NDgwMjEzfQ.eYi5HQt5UnxBVlP3u-r2-KVC8zuFsckxGXRIKlYnbnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/shipment/5fcfc8795088cd08a416b0a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipment",
+								"5fcfc8795088cd08a416b0a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shipment Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNmY2RkZGIyZDY1ZDA0N2NmMGZiYzgiLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTYwNzQ3MzAxMywiZXhwIjoxNjA3NDgwMjEzfQ.eYi5HQt5UnxBVlP3u-r2-KVC8zuFsckxGXRIKlYnbnQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "standard",
+									"type": "text"
+								},
+								{
+									"key": "shipstatus",
+									"value": "delivered",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "tx",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "ca",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shipment/5fcfc8795088cd08a416b0a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipment",
+								"5fcfc8795088cd08a416b0a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shipment Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNmY2RkZGIyZDY1ZDA0N2NmMGZiYzgiLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTYwNzQ3MzAxMywiZXhwIjoxNjA3NDgwMjEzfQ.eYi5HQt5UnxBVlP3u-r2-KVC8zuFsckxGXRIKlYnbnQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/shipment/5fcfc8795088cd08a416b0a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shipment",
+								"5fcfc8795088cd08a416b0a4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
